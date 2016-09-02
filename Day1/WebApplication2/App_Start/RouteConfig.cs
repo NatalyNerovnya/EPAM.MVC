@@ -19,15 +19,15 @@ namespace WebApplication2
                 name: "Default",
                 url: "{controller}/Index/{str}",
                 defaults: new { controller = "Home", action = "Index", str = UrlParameter.Optional},
-                namespaces: new[] { "WebApplication2.Controllers.AnotherController" } //,
-                //constraints: new { controller = "^H.*", id = @"\d{2}", , httpMethod = new HttpMethodConstraint("GET") }
+                namespaces: new[] { "WebApplication2.Controllers.AnotherController" } 
             );
 
             routes.MapRoute(
                name: "Default2",
                url: "{controller}/{action}",
                defaults: new { controller = "Home", action = "Index"},
-               namespaces: new[] { "WebApplication2.Controllers" }
+               namespaces: new[] { "WebApplication2.Controllers" },
+               constraints: new { controller = "^H.*", action = "^Index$" }
                );
 
         }
