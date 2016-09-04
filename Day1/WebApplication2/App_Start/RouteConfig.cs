@@ -16,18 +16,17 @@ namespace WebApplication2
            
 
             routes.MapRoute(
-                name: "Default",
+                name: "AnotherController",
                 url: "{controller}/Index/{str}",
                 defaults: new { controller = "Home", action = "Index", str = UrlParameter.Optional},
                 namespaces: new[] { "WebApplication2.Controllers.AnotherController" } 
             );
 
             routes.MapRoute(
-               name: "Default2",
+               name: "DefaultController",
                url: "{controller}/{action}",
                defaults: new { controller = "Home", action = "Index"},
-               namespaces: new[] { "WebApplication2.Controllers" },
-               constraints: new { controller = "^H.*", action = "^Index$" }
+               namespaces: new[] { "WebApplication2.Controllers" }
                );
 
         }
