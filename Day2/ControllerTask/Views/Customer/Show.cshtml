@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Show";
+}
+
+<h2>All Users</h2>
+@foreach(var user in ControllerTask.Models.UsersList.Users)
+{
+    <div>
+        <h3>Name: @user.Name</h3>
+        <h4>Second Name : @user.SecondName</h4>
+        <hr>
+    </div>
+}
+
+
