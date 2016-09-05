@@ -21,24 +21,17 @@ namespace ControllerTask.Models
             });
         }
 
+    
+        public async Task AddUserAsync(User user)
+        {
+            await Task.Delay(2000);
+            AddUser();
+        }
+
         public static List<User> GetAll()
         {
             Thread.Sleep(2000);
             return Users;
-        }
-
-        public static async Task AddUserAsync()
-        {
-            return await Task.Factory.StartNew(() =>
-            {
-                Thread.Sleep(2000);
-                Users.Add(new User()
-                {
-                    Name = "User",
-                    SecondName = "Userov"
-                });
-                return Users;
-            });
         }
     }
 }
