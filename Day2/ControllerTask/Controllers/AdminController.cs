@@ -1,5 +1,8 @@
-﻿using ControllerTask.Infrastructure;
+﻿using System.Linq;
+using System.Web.Caching;
+using ControllerTask.Infrastructure;
 using System.Web.Mvc;
+using ControllerTask.Models;
 
 namespace ControllerTask.Controllers
 {
@@ -7,9 +10,11 @@ namespace ControllerTask.Controllers
     {
         // GET: Admin
         [Local]
-        public ActionResult Index()
+        public ActionResult Delete()
         {
-            return View();
+            var users = UsersList.GetAll();
+            UsersList.GetAll()?.RemoveAt(users.FindLastIndex(u => u.Name == "User"));
+            return RedirectToAction("User-List","Customer");
         }
     }
 }

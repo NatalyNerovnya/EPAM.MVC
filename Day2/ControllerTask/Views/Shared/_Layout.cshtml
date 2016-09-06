@@ -39,7 +39,8 @@
             <button class="btn btn-info">Show as Json</button>
         }
         @Html.ActionLink("Home Page", "Index", "Home", null, new { @type = "button", @class = "btn btn-primary", @style = "margin-top:10px" })<br>
-        @Html.ActionLink("Error page", "Asdsa", "Customer", null, new { @type = "button", @class = "btn btn-danger", @style = "margin-top:10px" })<br>
+        @Html.ActionLink("Error page", "Asdsa", "Customer", null, new {@type = "button", @class = "btn btn-danger", @style = "margin-top:10px"})<br>
+        @Html.ActionLink("Delete last user", "Delete", "Admin", null, new { @type = "button", @class = "btn btn-warning", @style = "margin-top:10px" })<br>
         @RenderBody()
         <hr />
         <footer>
