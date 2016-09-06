@@ -3,10 +3,10 @@
 }
 
 <h2>All Users</h2>
-@foreach(var user in ControllerTask.Models.UsersList.Users)
+@foreach(var user in ViewBag.Users)
 {
     <div>
-        <h3>Name: @user.Name</h3>
+        <h3>Name: @user.Name @user.Id</h3>
         <h4>Second Name : @user.SecondName</h4>
         <hr>
     </div>
