@@ -10,7 +10,13 @@ namespace ControllerTask_CustomFactory.Infrastructure
     {
         public SessionStateBehavior GetControllerSessionBehavior(RequestContext requestContext, string controllerName)
         {
-            return SessionStateBehavior.Default;
+            switch(controllerName)
+            {
+                case "Home":
+                    return SessionStateBehavior.Disabled;
+                default:
+                    return SessionStateBehavior.Default;
+            }                
         }
 
         public void ReleaseController(IController controller)
