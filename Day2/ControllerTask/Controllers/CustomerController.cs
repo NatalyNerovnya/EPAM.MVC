@@ -1,33 +1,34 @@
 ﻿using ControllerTask.Models;
-using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace ControllerTask.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomerController : BaseController
     {
-        // GET: Customer
-       // [HttpPost]
+        [HttpPost]
+        [ActionName("Add-User")]
         public async Task<ActionResult> Add()
         {
-            var users = await Task<List<ControllerTask.Models.User>>.Factory.StartNew(() => UsersList.AddUserAsync();)
+            await Task.Factory.StartNew(() => UsersList.AddUserAsync());
             
-            return RedirectToAction("Show");
+            return RedirectToAction("User-List");
         }
-
+        
         [HttpPost]
-        public ActionResult GetJsonListIfUsers()
+        [ActionName("User-List")]
+        public JsonResult GetJsonListOfUsers()
         {
             var users = UsersList.GetAll();
-            return Json(users);
+            return Json(users, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
+        [ActionName("User-List")]
         public ActionResult Show()
         {
-            return View();
+            ViewBag.Users = UsersList.GetAll();
+            return View("Show");
         }
     }
 }

@@ -8,19 +8,11 @@
 
         public string SecondName { get; set; }
 
-        public int Id {
-            get
-            {
-                return id;
-            }
-            private set {
-                id = value;
-            }
-        }
+        public int Id { get; private set; }
 
         public User()
         {
-            this.Id++;
+            this.Id = id++;
         }
     }
 }

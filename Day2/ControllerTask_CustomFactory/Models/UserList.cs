@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace ControllerTask_CustomFactory.Models
+{
+    public class UsersList
+    {
+        public static List<User> Users { get; set; }
+
+        public static async void AddUserAsync()
+        {
+            await Task.Run((Action)AddUser);
+        }
+
+        public static List<User> GetAll()
+        {
+            Thread.Sleep(2000);
+            return Users;
+        }
+
+        private static void AddUser()
+        {
+            if (Users == null)
+                Users = new List<User>();
+            Thread.Sleep(2000);
+            Users.Add(new User()
+            {
+                Name = "Unknown",
+                SecondName = "Unknowner"
+            });
+        }
+    }
+}

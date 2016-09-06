@@ -3,13 +3,14 @@
 }
 
 <h2>All Users</h2>
-@foreach(var user in ControllerTask.Models.UsersList.Users)
+@if (ViewBag.Users != null)
 {
-    <div>
-        <h3>Name: @user.Name</h3>
-        <h4>Second Name : @user.SecondName</h4>
-        <hr>
-    </div>
+    foreach (var user in ViewBag.Users)
+    {
+        <div>
+            <h3>Name: @user.Name @user.Id</h3>
+            <h4>Second Name : @user.SecondName</h4>
+            <hr>
+        </div>
+    }
 }
-
-

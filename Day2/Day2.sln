@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerTask_Attributes", "ControllerTask\ControllerTask_Attributes.csproj", "{BF2D7975-8F73-4F7E-9259-26AC070BB8AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerTask_CustomFactory", "ControllerTask_CustomFactory\ControllerTask_CustomFactory.csproj", "{20F47B62-138F-4E2C-A57D-8D0D58E57440}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{BF2D7975-8F73-4F7E-9259-26AC070BB8AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2D7975-8F73-4F7E-9259-26AC070BB8AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2D7975-8F73-4F7E-9259-26AC070BB8AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F47B62-138F-4E2C-A57D-8D0D58E57440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F47B62-138F-4E2C-A57D-8D0D58E57440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F47B62-138F-4E2C-A57D-8D0D58E57440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F47B62-138F-4E2C-A57D-8D0D58E57440}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
