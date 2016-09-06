@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                
+                @Html.ActionLink("Task with attributes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 
             </div>
             <div class="navbar-collapse collapse">
@@ -28,20 +28,22 @@
     </div>
 
     <div class="container body-content">
+        
+        @using (Html.BeginForm("Add-User", "Customer", FormMethod.Post))
+            {
+            <button class="btn btn-info">Add</button>
+        }
+        @Html.ActionLink("Show Users", "User-List", "User", null, new { @type = "button", @class = "btn btn-info", @style = "margin:10px 0px" })<br>
+        @using (Html.BeginForm("User-List", "Customer", FormMethod.Post))
+            {
+            <button class="btn btn-info">Show as Json</button>
+        }
+        @Html.ActionLink("Home Page", "Index", "Home", null, new { @type = "button", @class = "btn btn-primary", @style = "margin-top:10px" })<br>
+        @Html.ActionLink("Error page", "Asdsa", "Customer", null, new { @type = "button", @class = "btn btn-danger", @style = "margin-top:10px" })<br>
         @RenderBody()
         <hr />
         <footer>
-            @using (Html.BeginForm("Add-User", "Customer", FormMethod.Post))
-            {
-                <button class="btn btn-info">Add</button>
-            }
-            @Html.ActionLink("Show Users", "User-List", "User", null, new { @type = "button", @class = "btn btn-info", @style = "margin-top:10px" })
-            @using (Html.BeginForm("User-List", "Customer", FormMethod.Post))
-            {
-                <button class="btn btn-info">Show as Json</button>
-            }
-            @Html.ActionLink("Home Page", "Index", "Home", null, new { @type = "button", @class = "btn btn-primary", @style = "margin-top:10px" })
-            @Html.ActionLink("Error page", "Asdsa", "Customer", null, new { @type = "button", @class = "btn btn-danger", @style = "margin-top:10px" })
+            
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>

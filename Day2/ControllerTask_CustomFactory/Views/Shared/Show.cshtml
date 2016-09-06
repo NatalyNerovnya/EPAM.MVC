@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Show";
+}
+
+<h2>All Users</h2>
+@if (ViewBag.Users != null)
+{
+    foreach (var user in ViewBag.Users)
+    {
+        <div>
+            <h3>Name: @user.Name @user.Id</h3>
+            <h4>Second Name : @user.SecondName</h4>
+            <hr>
+        </div>
+    }
+}
