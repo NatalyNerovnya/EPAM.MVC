@@ -17,8 +17,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Home task 2", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                @Html.ActionLink("Add User", "Add", "Customer", null, new { @type = "button", @class = "btn btn-info" })
+                @Html.ActionLink("Add User", "Add", "Customer", null, new { @type = "button", @class = "btn btn-info", @style = "margin-top:10px"})
+                @Html.ActionLink("Show Users", "Show", "User", null, new { @type = "button", @class = "btn btn-info", @style = "margin-top:10px" })
+                @Html.ActionLink("Json result", "GetJsonListOfUsers", "Customer", null, new { @type = "button", @class = "btn btn-info", @style = "margin-top:10px" })
+                @Html.ActionLink("Home Page", "Index", "Home", null, new { @type = "button", @class = "btn btn-primary", @style = "margin-top:10px" })
+                @Html.ActionLink("Error page", "Asdsa", "Customer", null, new { @type = "button", @class = "btn btn-danger", @style = "margin-top:10px" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">

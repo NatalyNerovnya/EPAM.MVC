@@ -6,19 +6,18 @@ namespace ControllerTask.Controllers
 {
     public class CustomerController : BaseController
     {
-        // GET: Customer
-        //Add-User
         //[HttpPost]
+        //[ActionName("Add-User")]
         public async Task<ActionResult> Add()
         {
             await Task.Factory.StartNew(() => UsersList.AddUserAsync());
             
             return RedirectToAction("Show");
         }
-
-        //User-List
+        
         //[HttpPost]
-        public ActionResult GetJsonListOfUsers()
+       // [ActionName("User-List")]
+        public JsonResult GetJsonListOfUsers()
         {
             var users = UsersList.GetAll();
             return Json(users, JsonRequestBehavior.AllowGet);
@@ -26,6 +25,7 @@ namespace ControllerTask.Controllers
 
         //User-List
         [HttpGet]
+        //[ActionName("User-List")]
         public ActionResult Show()
         {
             ViewBag.Users = UsersList.GetAll();

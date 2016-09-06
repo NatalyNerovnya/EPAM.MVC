@@ -10,10 +10,24 @@ namespace ControllerTask
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                name: "CustomerController",
+                url: "Customer/{action}",
+                defaults: new { controller = "Customer", action = "Show" }
             );
+
+            routes.MapRoute(
+                name: "UserController",
+                url: "User/{action}",
+                defaults: new { controller = "Customer", action = "Show" }
+            );
+
+            routes.MapRoute(
+                name: "Default",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Home", action = "Index" }
+            );
+
+            
         }
     }
 }
