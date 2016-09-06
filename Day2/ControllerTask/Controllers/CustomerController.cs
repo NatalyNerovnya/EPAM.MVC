@@ -1,5 +1,4 @@
-﻿using ControllerTask.Infrastructure;
-using ControllerTask.Models;
+﻿using ControllerTask.Models;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
@@ -7,7 +6,7 @@ namespace ControllerTask.Controllers
 {
     public class CustomerController : BaseController
     {
-        //[HttpPost]
+        [HttpPost]
         [ActionName("Add-User")]
         public async Task<ActionResult> Add()
         {
@@ -16,7 +15,7 @@ namespace ControllerTask.Controllers
             return RedirectToAction("User-List");
         }
         
-        //[HttpPost]
+        [HttpPost]
         [ActionName("User-List")]
         public JsonResult GetJsonListOfUsers()
         {
@@ -25,7 +24,6 @@ namespace ControllerTask.Controllers
         }
 
         [HttpGet]
-        [Local]
         [ActionName("User-List")]
         public ActionResult Show()
         {
