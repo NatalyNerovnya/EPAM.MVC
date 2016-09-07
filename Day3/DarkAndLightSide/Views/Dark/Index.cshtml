@@ -4,16 +4,20 @@
 }
 @Html.Partial("_Header")
 
+@section Style{
+    <style>
+    body {
+        background-color: darkgray;
+    }
+</style>
+    }
+
 @section Header {
     <img src="~/Content/dark_logo.png" stye="width:100px; float: left;" />
 @Html.ActionLink("Dark side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
 }
 
-<style>
-    body {
-        background-color: darkgray;
-    }
-</style>
+
 
 <h2>PersonInfo</h2>
 
