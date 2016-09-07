@@ -1,0 +1,28 @@
+﻿@model DarkAndLightSide.Models.User
+@{
+    ViewBag.Title = "PersonInfo";
+}
+@Html.Partial("_Header")
+
+@section Header {
+    <img src="~/Content/dark_logo.png" stye="width:100px; float: left;" />
+@Html.ActionLink("Dark side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
+}
+
+<style>
+    body {
+        background-color: darkgray;
+    }
+</style>
+
+<h2>PersonInfo</h2>
+
+<h3>Name: @Model.Name</h3>
+<h3>Age: @Model.Age</h3>
+<h3>Side: @Model.Side</h3>
+
+
+@section Footer {
+    @Html.ActionLink("Change Side","ChangeSide", "Dark", Model, null)
+}
+
