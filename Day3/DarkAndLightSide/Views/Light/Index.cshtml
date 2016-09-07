@@ -6,8 +6,12 @@
 
 @section Header {
     
-<img src="~/Content/light.jpg" stye="width:100px;"/>
+<img src="~/Content/light.jpg" stye="width:100px;"/><br>
     @Html.ActionLink("Light side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
+}
+
+@section NavBar {
+    @Html.ActionLink("NavBar light button","Index", "Light", Model, new { @class = "btn btn-default" })
 }
 
 
@@ -19,5 +23,5 @@
 
 
 @section Footer {
-    @Html.ActionLink("Change Side", "ChangeSide", "Light", Model, null)
+    @Html.ActionLink("Change Side", "ChangeSide", "Light", Model, new { @class = "btn btn-warning" })
 }

@@ -13,8 +13,12 @@
     }
 
 @section Header {
-    <img src="~/Content/dark_logo.png" stye="width:100px; float: left;" />
+    <img src="~/Content/dark_logo.png" stye="width:100px; float: left;" /><br>
 @Html.ActionLink("Dark side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
+}
+
+@section NavBar {
+    @Html.ActionLink("NavBar dark button", "Index", "Dark", Model, new { @class = "btn btn-default" })
 }
 
 
@@ -27,6 +31,6 @@
 
 
 @section Footer {
-    @Html.ActionLink("Change Side","ChangeSide", "Dark", Model, null)
+    @Html.ActionLink("Change Side","ChangeSide", "Dark", Model, new {@class = "btn btn-danger"})
 }
 
