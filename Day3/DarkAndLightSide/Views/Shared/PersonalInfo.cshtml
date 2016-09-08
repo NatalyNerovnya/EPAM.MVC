@@ -1,0 +1,50 @@
+﻿@model DarkAndLightSide.Models.User
+@{
+    ViewBag.Title = "PersonInfo";
+}
+
+@if (Model.Side == DarkAndLightSide.Models.Side.Dark)
+{
+    @section Style{
+        <style>
+            body {
+                background-color: darkgray;
+            }
+        </style>
+    }
+}
+
+@section Header {
+    @Html.Partial("_Header");
+}
+
+@section NavBar {
+    @if (Model.Side == DarkAndLightSide.Models.Side.Dark)
+    {
+        @Html.ActionLink("NavBar dark button", "Index", "Dark", Model, new { @class = "btn btn-default" })
+    }
+    else
+    {
+        @Html.ActionLink("NavBar light button", "Index", "Light", Model, new { @class = "btn btn-default" })
+    }
+
+}
+
+@section Body {
+    <br><br><br><br><br><br>
+    <h3>Name: @Model.Name</h3>
+    <h3>Age: @Model.Age</h3>
+    <h3>Side: @Model.Side</h3>
+}
+
+
+@section Footer {
+    @if (Model.Side == DarkAndLightSide.Models.Side.Dark)
+    {
+        @Html.ActionLink("Change Side", "ChangeSide", "Dark", Model, new { @class = "btn btn-danger" })
+    }
+    else
+    {
+        @Html.ActionLink("Change Side", "ChangeSide", "Light", Model, new { @class = "btn btn-warning" })
+    }
+}

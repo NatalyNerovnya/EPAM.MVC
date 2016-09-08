@@ -135,10 +135,10 @@
     <Content Include="Web.config" />
     <Content Include="Views\Dark\_Header.cshtml" />
     <Content Include="Views\Dark\Index.cshtml" />
-    <Content Include="Views\Shared\PersonInfo.cshtml" />
     <Content Include="Views\Light\Index.cshtml" />
     <Content Include="Views\Light\_Header.cshtml" />
     <Content Include="Views\Dark\ChangeSide.cshtml" />
+    <Content Include="Views\Shared\PersonalInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />

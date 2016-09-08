@@ -8,7 +8,7 @@ namespace DarkAndLightSide.Controllers
         // GET: Light
         public ActionResult Index(User user)
         {
-            return View(user);
+            return View("PersonalInfo", user);
         }
 
         public ActionResult ChangeSide(User user)
