@@ -43,3 +43,4 @@ D:\Natallia_Nerovnya\EPAM.MVC\Day3\DarkAndLightSide\bin\System.Web.Helpers.xml
 D:\Natallia_Nerovnya\EPAM.MVC\Day3\DarkAndLightSide\bin\System.Web.Mvc.xml
 D:\Natallia_Nerovnya\EPAM.MVC\Day3\DarkAndLightSide\obj\Debug\DarkAndLightSide.dll
 D:\Natallia_Nerovnya\EPAM.MVC\Day3\DarkAndLightSide\obj\Debug\DarkAndLightSide.pdb
+D:\Natallia_Nerovnya\EPAM.MVC\Day3\DarkAndLightSide\obj\Debug\DarkAndLightSide.csprojResolveAssemblyReference.cache

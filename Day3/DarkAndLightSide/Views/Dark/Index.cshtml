@@ -2,35 +2,32 @@
 @{
     ViewBag.Title = "PersonInfo";
 }
-@Html.Partial("_Header")
 
 @section Style{
     <style>
-    body {
-        background-color: darkgray;
-    }
-</style>
-    }
+        body {
+            background-color: darkgray;
+        }
+    </style>
+}
 
 @section Header {
-    <img src="~/Content/dark_logo.png" stye="width:100px; float: left;" /><br>
-@Html.ActionLink("Dark side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
+    @Html.Partial("_Header");
 }
 
 @section NavBar {
     @Html.ActionLink("NavBar dark button", "Index", "Dark", Model, new { @class = "btn btn-default" })
 }
 
-
-
-<h2>PersonInfo</h2>
-
-<h3>Name: @Model.Name</h3>
-<h3>Age: @Model.Age</h3>
-<h3>Side: @Model.Side</h3>
+@section Body {
+    <br><br><br><br><br><br>
+    <h3>Name: @Model.Name</h3>
+    <h3>Age: @Model.Age</h3>
+    <h3>Side: @Model.Side</h3>
+}
 
 
 @section Footer {
-    @Html.ActionLink("Change Side","ChangeSide", "Dark", Model, new {@class = "btn btn-danger"})
+    @Html.ActionLink("Change Side", "ChangeSide", "Dark", Model, new { @class = "btn btn-danger" })
 }
 

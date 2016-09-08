@@ -2,24 +2,20 @@
 @{
     ViewBag.Title = "PersonInfo";
 }
-@Html.Partial("_Header")
 
 @section Header {
-    
-<img src="~/Content/light.jpg" stye="width:100px;"/><br>
-    @Html.ActionLink("Light side", "Index", "Dark", new { area = "" }, new { @class = "navbar-brand" })
-}
+@Html.Partial("_Header");
+    }
 
 @section NavBar {
     @Html.ActionLink("NavBar light button","Index", "Light", Model, new { @class = "btn btn-default" })
 }
-
-
-<h2>PersonInfo</h2>
-
+@section Body{
 <h3>Name: @Model.Name</h3>
 <h3>Age: @Model.Age</h3>
 <h3>Side: @Model.Side</h3>
+    }
+
 
 
 @section Footer {

@@ -8,7 +8,7 @@
     @Html.LabelFor(m => m.Name, "Name")
     @Html.TextBoxFor(m => m.Name)<br><br>
     @Html.LabelFor(m => m.Age, "Age")
-    @Html.TextBoxFor(m => m.Age)<br><br>
+    @Html.TextBoxFor(m => m.Age, new { type = "number", min = "0" })<br><br>
     @Html.LabelFor(m => m.Side, "Side")<br>
     @Html.Label("Dark")<br> @Html.RadioButtonFor(m => m.Side, "Dark")<br>
     @Html.Label("Light")<br> @Html.RadioButtonFor(m => m.Side, "Light")<br><br>
