@@ -1,0 +1,22 @@
+﻿@model Models.Models.Person
+@{
+    ViewBag.Title = "ShowPerson";
+}
+
+<h2>Person</h2><hr>
+
+<label>First Name: </label> @Model.FirstName <br>
+<label>Last Name: </label> @Model.LastName <br>
+<label>Role: </label> @Model.Role <br>
+<label>Date of Birth: </label> @Model.BirthDate.Day - @Model.BirthDate.Month - @Model.BirthDate.Year <br>
+<fieldset>
+    <legend>Address:</legend>
+    <label>Country: </label> @Model.HomeAddress.Country <br>
+    <label>City: </label> @Model.HomeAddress.City <br>
+    <label>Line1: </label> @Model.HomeAddress.Line1 <br>
+    <label>Line2: </label> @Model.HomeAddress.Line2 <br>
+    <label>Postal Code: </label> @Model.HomeAddress.PostalCode <br>
+</fieldset>
+
+
+

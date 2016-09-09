@@ -14,7 +14,6 @@ namespace Models.Models
 		public string LastName { get; set; }
 		public DateTime BirthDate { get; set; }
 		public Address HomeAddress { get; set; }
-		public bool IsActive { get; set; }
 		public Role Role { get; set; }
 	}
     //[ModelBinder(typeof(CustomModelBinder))] -- чтобы не регестрирвоать в глобал асаксе

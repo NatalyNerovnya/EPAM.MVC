@@ -128,9 +128,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\CountryValueProvider.cs" />
-    <Compile Include="Infrastructure\AddressBinder.cs" />
-    <Compile Include="Infrastructure\CustomValueProviderFactory.cs" />
+    <Compile Include="Infrastructure\CustomModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,10 +139,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\CreatePerson.cshtml" />
-    <Content Include="Views\Home\DisplaySummary.cshtml" />
-    <Content Include="Views\Home\Names.cshtml" />
-    <Content Include="Views\Home\Address.cshtml" />
+    <Content Include="Views\Home\ShowPerson.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

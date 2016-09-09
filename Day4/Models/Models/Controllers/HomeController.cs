@@ -1,9 +1,6 @@
-﻿using System.Linq;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Models.Data;
 using Models.Models;
-using System;
-using System.Collections.Generic;
 
 namespace Models.Controllers
 {
@@ -16,39 +13,17 @@ namespace Models.Controllers
             _repo = personRepo;
         }
 
-        public ActionResult Index(int id)
+        [HttpGet]
+        public ActionResult Index()
         {
-            var person = _repo.GetAll().First(p => p.PersonId == id);
-            return View(person);
-        }
-
-        public ActionResult CreatePerson()
-        {
-            return View(new Person());
+            return View(new Person() { HomeAddress = new Address()});
         }
 
         [HttpPost]
-        public ActionResult CreatePerson(Person model)
+        public ActionResult Index(Person person)
         {
-            return View("Index", model);
-        }
-
-        public ActionResult DisplaySummary([Bind(Prefix = "HomeAddress")]Address summary)
-        {
-            return View(summary);
-        }
-
-        public ActionResult Names(String[] names)
-        {
-            names = names ?? new string[0];
-            return View(names);
-        }
-
-        public ActionResult Address(FormCollection formData)
-        {
-            IList<Address> addresses = new List<Address>();
-            UpdateModel(addresses, formData);
-            return View(addresses);
+            
+            return View("ShowPerson", person);
         }
     }
 }

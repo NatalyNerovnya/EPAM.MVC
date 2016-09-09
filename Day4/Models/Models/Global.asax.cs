@@ -12,7 +12,7 @@ namespace Models
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            ModelBinders.Binders.Add(typeof(Address), new CustomModelBinder());
+            ModelBinders.Binders.Add(typeof(Person), new CustomModelBinder());
         }
     }
 }

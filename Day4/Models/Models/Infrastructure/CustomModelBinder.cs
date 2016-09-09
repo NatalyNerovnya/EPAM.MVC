@@ -15,8 +15,19 @@ namespace Models.Infrastructure
             personModel.LastName = GetValue(bindingContext, "LastName");
             personModel.Role = GetRole(bindingContext);
             personModel.HomeAddress = GetAddress(bindingContext);
-            personModel.BirthDate = DateTime.ParseExact(GetValue(bindingContext, "BirthDate"), "dd(yyyy)MM", CultureInfo.InvariantCulture);
+            personModel.BirthDate = GetBirthDate(bindingContext);
+            
             return personModel;
+        }
+
+        private DateTime GetBirthDate(ModelBindingContext context)
+        {
+            DateTime dateTime;
+            var isDateParsed = DateTime.TryParseExact(GetValue(context, "BirthDate"), "dd(yyyy)MM", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime);
+            if (isDateParsed)
+                return dateTime;
+            else
+                return new DateTime();
         }
 
         private Role GetRole(ModelBindingContext bindingContext)
@@ -45,17 +56,17 @@ namespace Models.Infrastructure
         {
             ValueProviderResult result = context.ValueProvider.GetValue(name);
 
-            if (result == null || result.ToString().Contains("PO BOX"))
+            if (result == null || result.AttemptedValue.Contains("PO BOX"))
             {
                 return "<Not Specified>";
             }
-            if (name == "PostalCode" && result.ToString().Length <= 6)
+            if (name == "PostalCode" && result.AttemptedValue.Length <= 6)
             {
-                return "<Not Specified>";
+                return "<Not Defined>";
             }
             if (name == "Line2" && result.AttemptedValue == "")
             {
-                return "<Not Specified>";
+                return "<Not Defined>";
             }
             return result.AttemptedValue;
         }
