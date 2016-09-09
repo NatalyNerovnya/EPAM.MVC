@@ -134,8 +134,6 @@
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Views\Dark\_Header.cshtml" />
-    <Content Include="Views\Dark\Index.cshtml" />
-    <Content Include="Views\Light\Index.cshtml" />
     <Content Include="Views\Light\_Header.cshtml" />
     <Content Include="Views\Dark\ChangeSide.cshtml" />
     <Content Include="Views\Shared\PersonalInfo.cshtml" />
