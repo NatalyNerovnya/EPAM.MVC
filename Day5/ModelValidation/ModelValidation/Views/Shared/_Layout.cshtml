@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Site.css"/>
+    <package id="jQuery" version="3.1.0" targetFramework="net45" />
+    <package id="jQuery.Validation" version="1.15.1" targetFramework="net45" />
+    <package id="Microsoft.jQuery.Unobtrusive.Validation" version="3.2.3" targetFramework="net45" />
+
+</head>
+<body>
+
+<div class="container container-fluid">
+    @RenderBody()
+</div>
+
+
+@RenderSection("scripts", false)
+</body>
+</html>
